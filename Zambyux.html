@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <title>Կռիզինա Մանրամասներ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Կռիզինայի մեջ ավելացված ապրանքներ</h1>
+        <nav>
+            <a href="index.html">Վերադառնալ խանութ</a>
+        </nav>
+    </header>
+
+    <main>
+        <ul id="krizinaList"></ul>
+    </main>
+
+    <script>
+        const krizinaList = document.getElementById('krizinaList');
+        const krizinaItems = JSON.parse(localStorage.getItem('krizinaItems')) || [];
+
+        if (krizinaItems.length === 0) {
+            krizinaList.innerHTML = "<li>Կռիզինան դատարկ է</li>";
+        } else {
+            krizinaItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `Ապրանք: ${item.name}, Չափ: ${item.size}, Քանակ: ${item.qty}`;
+                krizinaList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

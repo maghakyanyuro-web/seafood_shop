@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <title>SeaFood Market</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal show">
+        <div class="modal-content">
+            <h2>Մուտք գործել</h2>
+            <input type="text" id="username" placeholder="Օգտանուն">
+            <input type="password" id="password" placeholder="Գաղտնաբառ">
+            <button id="loginSubmit">Մուտք</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header hide" id="mainHeader">
+        <h1>🦞 SeaFood Market</h1>
+        <nav>
+            <button class="categoryBtn" data-cat="fish">Ձուկ</button>
+            <button class="categoryBtn" data-cat="crustaceans">Խեցգետիններ</button>
+            <button class="categoryBtn" data-cat="beer">Գարեջուր 🍺</button>
+            <span id="welcomeUser"></span>
+            <button id="logoutBtn">Դուրս գալ</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="hide" id="mainContent">
+        <div id="productsContainer" class="products-container"></div>
+    </main>
+
+    <!-- Basket (fixed at bottom right) -->
+    <div id="basket" class="basket">
+        <h3>Զամբյուղ</h3>
+        <ul id="basketItems"></ul>
+        <p>Ընդհանուր գումար՝ <span id="basketTotal">0</span>֏</p>
+    </div>
+
+    <!-- Size selection popup -->
+    <div id="sizePopup" class="size-popup hide">
+        <h4>Ընտրել չափս</h4>
+        <div class="size-options">
+            <button data-size="small">Փոքր</button>
+            <button data-size="medium">Միջին</button>
+            <button data-size="large">Մեծ</button>
+        </div>
+        <button id="confirmSizeBtn">Ուղարկել Զամբյուղ</button>
+        <span id="closePopup">❌</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
